@@ -1,0 +1,58 @@
+name: wav2vec-speaker-identification
+
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8
+  - pip
+  - setuptools
+  - wheel
+  - cython
+  - numpy=1.20
+  - scipy=1.6
+  - scikit-learn=0.24
+  - pandas=1.2
+  - matplotlib=3.3
+  - seaborn=0.11
+  - pillow=8.4
+  - librosa=0.8
+  - pysoundfile
+  - psutil=5.8
+  - tqdm=4.64
+  - click=7.1.2
+  - jupyter=1.0
+  - jupyterlab=3.0
+  - pytorch=1.9.0
+  - torchaudio=0.9.0
+  - cudatoolkit=11.1
+  - mkl<2024
+  - intel-openmp<2024
+  - pip:
+      - "pytorch-lightning==1.4.5"
+      - "pytorch-model-summary>=0.1.2,<0.2"
+      - "torchmetrics==0.5.1"
+      - "hydra-core>=1.1.0,<1.2"
+      - "hydra-submitit-launcher>=1.1.1,<1.2"
+      - "hydra-optuna-sweeper>=1.1.0,<1.2"
+      - "omegaconf>=2.1.0,<2.2"
+      - "webdataset==0.1.58"
+      - "yaspin==2.0.0"
+      - "hurry.filesize>=0.9,<1.0"
+      - "python-dotenv>=0.17.0,<0.18"
+      - "speechbrain>=0.5.5,<0.6"
+      - "comet-ml>=3.9.0,<4"
+      - "lightning-bolts>=0.3.3,<0.4"
+      - "wavaugment>=0.2,<0.3"
+      - "fairseq==0.10.2"
+      - "jiwer>=2.2.0,<3"
+      - "datasets>=1.8.0,<2"
+      - "transformers==4.8.2"
+      - "tokenizers==0.10.3"
+      - "huggingface-hub==0.0.12"
+      - "black>=21.6b0,<22"
+      - "pytest>=6.2.2,<7"
+      - "pesq"
+      - "pystoi"
