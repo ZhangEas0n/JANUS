@@ -1,0 +1,1 @@
+conda activate wav2vec-speaker-identification

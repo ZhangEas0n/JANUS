@@ -1,0 +1,14 @@
+# instantiate the data module config object
+_target_: src.data.modules.speech.fluent_speech_commands.FluentSpeechCommandsDataModuleConfig
+
+dataset_folder: ${data_folder}/fluent_speech_commands_dataset
+train_csv: ${data_folder}/fluent_speech_commands_dataset/data/train_data.csv
+val_csv: ${data_folder}/fluent_speech_commands_dataset/data/valid_data.csv
+test_csv: ${data_folder}/fluent_speech_commands_dataset/data/test_data.csv
+
+train_collate_fn: default
+val_collate_fn: default
+test_collate_fn: default
+
+add_side_info: false
+limit_samples: -1

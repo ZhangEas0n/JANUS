@@ -5,23 +5,23 @@ from typing import List, Optional
 
 @dataclass
 class BTUAPAttackConfig:
-    ckpt_path: str = "model/wav2vec_base.ckpt"
-    output_path: str = "perturbations/original/SV_btuap_fsc_sr_optimized.pt"
-    evaluation_uap_path: Optional[str] = None
-    intent_head_path: str = "models/checkpoints/sr/intent_head_fsc.pt"
-    sample_rate: int = 16000
-    audio_length: float = 0.5
-    max_epochs: int = 2
-    steps_per_epoch: int = 500
-    tau_eval: float = 0.8
-    beta: float = 10.0
-    alpha: float = 0.5
-    gamma: float = 0.5
-    lambda_reg: float = 0.05
-    lambda_smooth: float = 0.01
-    epsilon: float = 0.05
-    pseudo_enrollment_samples: int = 50
-    sr_train_batch_size: int = 4
+    ckpt_path: str = "model/wav2vec_base.ckpt"    #扰动路径
+    output_path: str = "perturbations/original/SV_btuap_fsc_sr_optimized.pt"   #输出扰动路径
+    evaluation_uap_path: Optional[str] = None      #评估扰动路径
+    intent_head_path: str = "models/checkpoints/sr/intent_head_fsc.pt"     #分类头
+    sample_rate: int = 16000   #采样率
+    audio_length: float = 0.5       #音频长度，单位是s
+    max_epochs: int = 2     
+    steps_per_epoch: int = 500     
+    tau_eval: float = 0.8     #SV阈值
+    beta: float = 10.0        #没用了
+    alpha: float = 0.5        #SV
+    gamma: float = 0.5        #SR
+    lambda_reg: float = 0.05  #不可感知性
+    lambda_smooth: float = 0.01    #音频平滑度，可以用来优化感知性
+    epsilon: float = 0.05     #snr范围
+    pseudo_enrollment_samples: int = 50    #设定的注册用户
+    sr_train_batch_size: int = 4           #分类头训练部分
     sr_train_max_num_samples: int = 16000 * 12
     intent_warmup_steps: int = 8000
     intent_head_lr: float = 3e-4

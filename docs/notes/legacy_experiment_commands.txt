@@ -1,0 +1,51 @@
+python uap.py +experiment=uap
+python scripts/eval/evaluate_uap.py
+python scripts/eval/evaluate_kenansville.py
+python scripts/eval/evaluate_kenansville.py +kenan.attack=fft +kenan.fft_factor=0.1
+python scripts/eval/evaluate_pgd.py \
+  +pgd.eval_sv=true \
+  +pgd.eval_sr=false \
+  +pgd.max_attack_samples=16000 \
+  +pgd.steps=10
+
+python scripts/eval/evaluate_pgd.py \
+  +pgd.eval_sv=false \
+  +pgd.eval_sr=true \
+  +pgd.max_attack_samples=16000 \
+  +pgd.steps=10
+
+python scripts/eval/evaluate_muting_whisper.py
+
+python scripts/eval/evaluate_cw.py \
+  +cw.eval_sv=false \
+  +cw.eval_sr=true \
+  +cw.steps=50 \
+  +cw.epsilon=0.05 \
+  +cw.learning_rate=0.01 \
+  +cw.c_l2=0.01
+
+python scripts/eval/evaluate_cw.py \
+  +cw.eval_sv=true \
+  +cw.eval_sr=false \
+  +cw.max_attack_samples=16000 \
+  +cw.steps=50
+
+python scripts/eval/evaluate_fakebob.py \
+  +fakebob.epsilon=0.05 \
+  +fakebob.max_iter=10 \
+  +fakebob.samples_per_draw=20 \
+  +fakebob.sigma=0.001 \
+  +fakebob.learning_rate=0.005 \
+  +fakebob.query_batch_size=4
+
+python scripts/eval/evaluate_audio_quality.py +quality.max_batches=null
+
+python scripts/eval/evaluate_clean.py \
+  +clean.eval_sv=false \
+  +clean.eval_sr=true \
+  +clean.sr_max_batches=100
+
+python scripts/eval/evaluate_clean.py \
+  +clean.eval_sv=true \
+  +clean.eval_sr=false \
+  +clean.sr_max_batches=100

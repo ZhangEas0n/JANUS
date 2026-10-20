@@ -117,7 +117,7 @@ def save_uap_wav(path, uap_delta, sample_rate):
 @hydra.main(config_path="config", config_name="train_eval")
 def main_train(cfg: DictConfig):
     attack_cfg = BTUAPAttackConfig()
-    project_root = Path(get_original_cwd())
+    project_root = Path(get_original_cwd()) #/root/autodl-tmp/btuap-backup-main/train_fsc_joint_uap_experiment.py
     attack_cfg.resolve_paths(project_root)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

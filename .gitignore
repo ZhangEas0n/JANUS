@@ -50,9 +50,11 @@ __pycache__/
 models/
 results/
 recordings/
-data/
+/data/
 perturbations/
-experiments/
+/experiments/*
+!/experiments/*.py
+!/experiments/*.md
 exports/
 archive/
 _project_inventory/
